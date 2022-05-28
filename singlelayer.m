@@ -1,0 +1,12 @@
+np = 1.78;
+l = 632.8 * (10^(-9));
+ns = 0.1361 + 4.0106j;
+theta = linspace(0,pi/2,100);
+alpha = asin(sin(theta)/np);
+beta = pi/4 + alpha;
+t = asin(np*sin(beta)/ns);
+r = abs((np*cos(t) - ns*cos(beta))./(np*cos(t) + ns*cos(beta)));
+R = r.^2;
+plot(180*theta/pi,R);
+xlabel('Angle of Incidence(in radians)');
+ylabel('Reflectance');
